@@ -1,26 +1,48 @@
-student_count = 16
-#first, we print the list of students
+
+#let's put all the students into an array
+
+students = [ "Berta Gutierrez",
+ "Megan Folsom",
+ "Rolando Barbella",
+ "James Hunter",
+ "Abraham Thomas",
+ "Roy Gardiner",
+ "Jorja Tracy Hung",
+ "Colin Frankish",
+ "Ayaz Goulamabasse",
+ "Kalle Malmiharju",
+ "Andrey Krahmal",
+ "Biwek Shrestha",
+ "Mihai-Liviu Cojocar",
+ "Makis Otman",
+ "Nabin Rai",
+ "Peter Saxon"
+]
+# and then we print them
+
 puts "The students of my cohort at Makers Academy"
 puts "-------------------"
-puts "Berta Gutierrez"
-puts "Megan Folsom"
-puts "Rolando Barbella"
-puts "James Hunter"
-puts "Abraham Thomas"
-puts "Roy Gardiner"
-puts "Jorja Tracy Hung"
-puts "Colin Frankish"
-puts "Ayaz Goulamabasse"
-puts "Kalle Malmiharju"
-puts "Andrey Krahmal"
-puts "Biwek Shrestha"
-puts "Mihai-Liviu Cojocar"
-puts "Makis Otman"
-puts "Nabin Rai"
-puts "Peter Saxon"
 
-#finaly we print the total
-print "Overall we have "
-#it's important that print() doesn't add new line characters
-print student_count
-print " great students."
+puts students[0]
+puts students[1]
+puts students[2]
+puts students[3]
+puts students[4]
+puts students[5]
+puts students[6]
+puts students[7]
+puts students[8]
+puts students[9]
+puts students[10]
+puts students[11]
+puts students[12]
+puts students[13]
+puts students[14]
+puts students[15]
+
+# finaly, we print the total
+
+puts "Overall, we have #{students.length} great students"
+
+
+
