@@ -1,22 +1,23 @@
 
 #let's put all the students into an array
 
-students = [ "Berta Gutierrez",
- "Megan Folsom",
- "Rolando Barbella",
- "James Hunter",
- "Abraham Thomas",
- "Roy Gardiner",
- "Jorja Tracy Hung",
- "Colin Frankish",
- "Ayaz Goulamabasse",
- "Kalle Malmiharju",
- "Andrey Krahmal",
- "Biwek Shrestha",
- "Mihai-Liviu Cojocar",
- "Makis Otman",
- "Nabin Rai",
- "Peter Saxon"
+students = [ 
+	["Berta Gutierrez", :january],
+ 	["Megan Folsom", :january],
+ 	["Rolando Barbella", :january],
+ 	["James Hunter", :january],
+ 	["Abraham Thomas", :january],
+ 	["Roy Gardiner", :january],
+ 	["Jorja Tracy Hung", :january],
+ 	["Colin Frankish", :january],
+ 	["Ayaz Goulamabasse", :january],
+ 	["Kalle Malmiharju", :january],
+ 	["Andrey Krahmal", :january],
+ 	["Biwek Shrestha", :january],
+ 	["Mihai-Liviu Cojocar", :january],
+ 	["Makis Otman", :january],
+ 	["Nabin Rai", :january],
+ 	["Peter Saxon", :january]
 ]
 # and then we print them
 
