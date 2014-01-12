@@ -8,9 +8,13 @@ def input_students
 	name = gets.chomp
 	# while the name is not empty, repeat this code
 	while !name.empty? do 
-		puts "Now enter the cohort of the student:"
+		puts "Now enter the student's cohort:"
 		cohort_name = gets.chomp
 		# add the student hash to the array
+		# deafault value added for the cohort's name
+		if cohort_name.empty? 
+			cohort_name = "January"
+		end
 		students << {:name => name, :cohort => cohort_name}
 		print "Now we have #{students.length} students\n"
 		puts "Enter the name of the next student"
