@@ -1,6 +1,6 @@
 def input_students
 	print "Please enter the names of the students\n"
-	puts "To finish, just hit return twice\n"
+	print "To finish, just hit return twice\n"
 
 	# create an empty array
 	students = []
@@ -10,7 +10,7 @@ def input_students
 	while !name.empty? do 
 		# add the student hash to the array
 		students << {:name => name, :cohort => :january}
-		puts "Now we have #{students.length} students\n"
+		print "Now we have #{students.length} students\n"
 		# get another name from the user
 		name = gets.chomp
 	end
@@ -18,22 +18,22 @@ def input_students
 	students
 end
 
-def printeaza(students)
+def print_students(students)
    students.each do |student|
-     puts "#{student[:name]} (#{student[:cohort]} cohort})\n"
+     print "#{student[:name]} (#{student[:cohort]} cohort})\n" if student[:name][0] == "A"
    end
 end
 
 def print_header
-   puts "The students of my cohort at Makers Academy\n"
-   puts "-----------------------------"
+   print "The students of my cohort at Makers Academy\n"
+   print "-----------------------------\n"
  end
 
 def print_footer(names)
-   puts "Overall, we have #{names.length} great students\n"
+   print "Overall, we have #{names.length} great students\n"
 end
 
 students = input_students
 print_header
-printeaza(students)
+print_students(students)
 print_footer(students)
