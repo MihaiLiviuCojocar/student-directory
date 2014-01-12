@@ -28,7 +28,7 @@ end
 def print_students(students)
 		i = 1
 		while i <= students.length
-			puts "#{i}. #{students[i-1][:name]} (#{students[i-1][:cohort]} cohort)"
+			puts "#{i}. #{students[i-1][:name].center(30, "-")} (#{students[i-1][:cohort]} cohort)"
 			i = i + 1
    		end
 end
