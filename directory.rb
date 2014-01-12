@@ -20,7 +20,7 @@ end
 
 def print_students(students)
    students.each do |student|
-     print "#{student[:name]} (#{student[:cohort]} cohort})\n" if student[:name][0] == "A"
+     print "#{student[:name]} (#{student[:cohort]} cohort})\n" if student[:name].length < 12
    end
 end
 
