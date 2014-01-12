@@ -16,8 +16,12 @@ def input_students
 			cohort_name = "January"
 		end
 		students << {:name => name, :cohort => cohort_name}
-		print "Now we have #{students.length} students\n"
-		puts "Enter the name of the next student"
+		if students.length == 1
+			print "Now we have one student. \n Enter the name of the next student \n"
+		else
+			print "Now we have #{students.length} students\n"
+			puts "Enter the name of the next student"
+		end
 		# get another name from the user
 		name = gets.chomp
 	end
@@ -39,7 +43,11 @@ def print_header
  end
 
 def print_footer(names)
-   print "Overall, we have #{names.length} great students\n"
+	if names.length == 1
+		puts "Overall, we have just one great student."
+	else
+    	print "Overall, we have #{names.length} great students. \n"
+    end
 end
 
 students = input_students
