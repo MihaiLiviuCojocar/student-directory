@@ -5,11 +5,11 @@ def input_students
 	# create an empty array
 	students = []
 	# get the first name
-	name = gets.chomp
+	name = gets.delete("\n")
 	# while the name is not empty, repeat this code
 	while !name.empty? do 
 		puts "Now enter the student's cohort:"
-		cohort_name = gets.chomp
+		cohort_name = gets.delete("\n")
 		# add the student hash to the array
 		# deafault value added for the cohort's name
 		if cohort_name.empty? 
