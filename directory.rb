@@ -30,27 +30,33 @@ def input_students
 end
 
 def print_students(students)
-		i = 1
-		while i <= students.length
-			puts "#{i}. #{students[i-1][:name].center(30, "-")} (#{students[i-1][:cohort]} cohort)"
-			i = i + 1
-   		end
+			i = 1
+			while i <= students.length
+				puts "#{i}. #{students[i-1][:name].center(30, "-")} (#{students[i-1][:cohort].center(9)} cohort)"
+				i = i + 1
+   			end
 end
 
-def print_header
-   print "The students of my cohort at Makers Academy\n"
-   print "-----------------------------\n"
+def print_header(students)
+	if students.length != 0
+    	print "The students of my cohort at Makers Academy\n"
+    	print "-----------------------------\n"
+    end
  end
 
 def print_footer(names)
-	if names.length == 1
-		puts "Overall, we have just one great student."
-	else
-    	print "Overall, we have #{names.length} great students. \n"
+	if names.length == 0
+		puts "You didn't enter any name !! "
+		else
+			if names.length == 1
+				puts "Overall, we have just one great student."
+				else
+    				print "Overall, we have #{names.length} great students. \n"
+    			end
     end
 end
 
 students = input_students
-print_header
+print_header(students)
 print_students(students)
 print_footer(students)
