@@ -19,9 +19,11 @@ def input_students
 end
 
 def print_students(students)
-   students.each do |student|
-     print "#{student[:name]} (#{student[:cohort]} cohort})\n" if student[:name].length < 12
-   end
+		i = 1
+		while i <= students.length
+			puts "#{i}. #{students[i-1][:name]} (#{students[i-1][:cohort]} cohort)"
+			i = i + 1
+   		end
 end
 
 def print_header
