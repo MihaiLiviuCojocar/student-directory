@@ -8,14 +8,35 @@ def input_students
 	name = gets.delete("\n")
 	# while the name is not empty, repeat this code
 	while !name.empty? do 
-		puts "Now enter the student's cohort:"
-		cohort_name = gets.delete("\n")
-		# add the student hash to the array
-		# deafault value added for the cohort's name
-		if cohort_name.empty? 
-			cohort_name = "January"
+		# we give the user the option to choose from
+		puts "Now enter the student's cohort: \n (Enter 1 for January, 2 for February, .... , 12 for December)"
+		cohorts = ["January","February","March","April","May","June","July","August","September","Octomber","November","December"]
+		cohort_num = gets.to_i
+		
+		# if we get a wrong input, repeat the code until succesful
+		while !(1..cohorts.size).include? cohort_num
+			puts "Please use a number between 1 and #{cohorts.size}:"
+			cohort_num = gets.to_i
 		end
-		students << {:name => name, :cohort => cohort_name}
+
+		# after a succesful input, assign the cohort name
+		cohort_name = cohorts[cohort_num - 1]
+		puts "You entered -#{name}- and selected the -#{cohort_name}- cohort! Are you sure ? y/n "
+		# ask the user if sure about the choice
+		answer = ["Y","N"]
+		user_answer = gets.chomp.capitalize
+		while !(answer).include? user_answer
+			puts "Please type y/n only!"
+			user_answer = gets.chomp.capitalize
+		end
+
+		if user_answer == answer[0]
+			# after confirmation add the student hash to the array
+			students << {:name => name, :cohort => cohort_name}
+		else 
+			puts "Chose again !"
+		end
+
 		if students.length == 1
 			print "Now we have one student. \n Enter the name of the next student \n"
 		else
