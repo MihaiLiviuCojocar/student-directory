@@ -58,6 +58,15 @@ def print_students(students)
    			end
 end
 
+# method for printing the header
+def print_header(students)
+	if students.length != 0
+    	print "The students of my cohort at Makers Academy\n"
+    	print "-----------------------------\n"
+    end
+ end
+
+# added choice for how the list is sorted and printed
 def print_choice(students)
 	puts "How do you want to print the student's list ? By name or by cohort ? n/c"
 	answer_choices = ["N","C"]
@@ -68,6 +77,7 @@ def print_choice(students)
 		choice_answer = gets.capitalize.chomp
 	end
 		puts print_header(students)
+		
 	if choice_answer == answer_choices[0]
 		sort_by_name = students.sort_by{ |name| name[:name]}
 		print_students(sort_by_name)
@@ -77,13 +87,7 @@ def print_choice(students)
 	end
 end
 
-def print_header(students)
-	if students.length != 0
-    	print "The students of my cohort at Makers Academy\n"
-    	print "-----------------------------\n"
-    end
- end
-
+# method for printing the footer
 def print_footer(names)
 	if names.length == 0
 		puts "You didn't enter any name !! "
