@@ -24,7 +24,7 @@ def input_students
 		puts "You entered -#{name}- and selected the -#{cohort_name}- cohort! Are you sure ? y/n "
 		# ask the user if sure about the choice
 		answer = ["Y","N"]
-		user_answer = gets.chomp.capitalize
+		user_answer = gets.capitalize.chomp
 		while !(answer).include? user_answer
 			puts "Please type y/n only!"
 			user_answer = gets.chomp.capitalize
@@ -58,6 +58,25 @@ def print_students(students)
    			end
 end
 
+def print_choice(students)
+	puts "How do you want to print the student's list ? By name or by cohort ? n/c"
+	answer_choices = ["N","C"]
+	choice_answer = gets.capitalize.chomp
+
+	while !(answer_choices).include? choice_answer
+		puts "Please type 'n' or 'c' !"
+		choice_answer = gets.capitalize.chomp
+	end
+		puts print_header(students)
+	if choice_answer == answer_choices[0]
+		sort_by_name = students.sort_by{ |name| name[:name]}
+		print_students(sort_by_name)
+	else
+		sort_by_cohort = students.sort_by{ |cohort| cohort[:cohort]}
+		print_students(sort_by_cohort)
+	end
+end
+
 def print_header(students)
 	if students.length != 0
     	print "The students of my cohort at Makers Academy\n"
@@ -78,6 +97,5 @@ def print_footer(names)
 end
 
 students = input_students
-print_header(students)
-print_students(students)
+print_choice(students)
 print_footer(students)
