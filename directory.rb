@@ -1,12 +1,41 @@
 YES = "Y"
 NO = "N"
 
+def interactive_menu
+	loop do
+	 # 1. print the menu and ask the user what to do
+	 	puts "1. Input the students"
+	 	puts "2. show the students"
+	 	puts "9. exit"
+
+	 # 2. read the input and save it into a variable
+	 	selection = gets.chomp
+	 # 3. do what the user has asked
+	 	case selection
+	 		when "1"
+	 			# input the students
+	 			@students = input_students	
+	 		when "2"
+	 			# show the students
+	 			print_choice(@students)
+				print_footer(@students)
+
+	 		when "9"
+	 			exit # exit
+	 		else 
+	 			puts "I don't know what you meant, try again!"
+	 		end
+
+	end
+end
+
+
 def input_students
 	print "Please enter the names of the students\n"
 	print "To finish, just hit return twice\n"
 
 	# create an empty array
-	students = []
+	@students = []
 	# get the first name
 	name = gets.delete("\n")
 	# while the name is not empty, repeat this code
@@ -35,22 +64,22 @@ def input_students
 
 		if user_answer == YES
 			# after confirmation add the student hash to the array
-			students << {:name => name, :cohort => cohort_name}
+			@students << {:name => name, :cohort => cohort_name}
 		else 
 			puts "Chose again !"
 		end
 
-		if students.length == 1
+		if @students.length == 1
 			print "Now we have one student. \n Enter the name of the next student \n"
 		else
-			print "Now we have #{students.length} students\n"
+			print "Now we have #{@students.length} students\n"
 			puts "Enter the name of the next student"
 		end
 		# get another name from the user
 		name = gets.chomp
 	end
 	# return the array of students
-	students
+	@students
 end
 
 def print_students(students)
@@ -95,6 +124,5 @@ def print_footer(names)
   end
 end
 
-students = input_students
-print_choice(students)
-print_footer(students)
+
+interactive_menu
